@@ -1,0 +1,8 @@
+version: "3.9"
+
+services:
+  bash-container:
+    image: bash:latest
+    container_name: local_bash
+    volumes:
+      - ./base:/base

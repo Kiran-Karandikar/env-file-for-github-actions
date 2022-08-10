@@ -1,0 +1,12 @@
+version: 2
+
+sphinx:
+  configuration: /base/docs/conf.py
+
+build:
+  image: testing
+
+python:
+  version: 3.8
+  install:
+    - requirements: /base/requirements/local.txt
