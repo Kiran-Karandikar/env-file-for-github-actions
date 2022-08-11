@@ -18,12 +18,10 @@ WORKDIR /base
 # in conjuction with sphinx documentaion generator.
 RUN python -m venv /py && \
     /py/bin/pip install --upgrade pip && \
-    apk add --update --no-cache postgresql-client && \
-    apk add --update --no-cache --virtual .tmp-build-deps  \
+    apk add --update --no-cache  \
       build-base bash make alpine-sdk musl-dev && \
     /py/bin/pip install -r /tmp/requirements/local.txt && \
     rm -rf /tmp && \
-    apk del .tmp-build-deps && \
     adduser \
         --disabled-password \
         --no-create-home \

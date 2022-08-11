@@ -22,4 +22,4 @@ help:
 
 # If Using docker based setup use:  change --open-browser to --host 0.0.0.0
 livehtml:
-	sphinx-autobuild -a --open-browser  --port 9000 --watch "$(APP)" "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+	sphinx-autobuild -a --host 0.0.0.0  --port 9000 --watch "$(APP)" "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)

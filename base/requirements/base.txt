@@ -1,5 +1,14 @@
+# https://github.com/joke2k/django-environ
+django-environ
+
 # ------------------------------------------------------------------------------
-# Oauth2
+# Request
 # ------------------------------------------------------------------------------
 requests
+# https://pynacl.readthedocs.io/en/latest/
 PyNaCl
+
+# https://docs.aiohttp.org/en/latest/index.html#aiohttp-installation
+aiohttp
+aiodns
+Brotli

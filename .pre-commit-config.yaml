@@ -82,6 +82,18 @@ repos:
     hooks:
       - id: docker-compose-check
 
+  - repo: local
+    hooks:
+      - id: update-github-action-secrets
+        name: Add .env contents to github action secrets.
+        entry: python base/secrets_updater/main.py
+        language: system
+        types: [python]
+        pass_filenames: false
+        verbose: false  # true for command line output
+        log_file: ./base/secrets_updater.log
+        stages: [push]
+
 # sets up .pre-commit-ci.yaml to ensure pre-commit dependencies stay up to date
 # https://pre-commit.ci/
 ci:

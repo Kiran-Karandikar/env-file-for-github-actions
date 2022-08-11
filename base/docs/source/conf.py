@@ -20,7 +20,7 @@ sys.path.insert(0, os.path.abspath("../../"))
 
 # -- Project information -----------------------------------------------------
 
-project = "Python Template"
+project = "GitHub Actions Secret Updater."
 copyright = "2022, Kiran Karandikar"  # pylint: disable=W0622
 author = "Kiran Karandikar"
 

@@ -1,89 +1,66 @@
-import json
+# Standard Library
+import asyncio
+import os
+import sys
 
-import requests
-from pprint import pprint
-from base64 import b64encode
-from nacl import encoding, public
-
-# https://docs.github.com/en/rest/actions/secrets#list-repository-secrets
-# https://docs.github.com/en/rest/actions/secrets#list-environment-secrets
-# github username
-
-headers = {
-    "Accept": "application/vnd.github.v3+json",
-    "Authorization": f'token {token}',
-}
-# r = requests.post(url, headers=self.headers)
-# url to request
-url = f"https://api.github.com/repos/{owner}/{repo}/actions/secrets"
-# make the request and return the json
-user_data = requests.get(url, headers=headers).json()
-# pretty print JSON data
-pprint(user_data)
-for secret_dict in user_data.get("secrets"):
-    print(secret_dict.get("name"))
+# 3rd Party Libraries
+from github import GitHubActions
+from settings import BASE_DIR
 
 
-# Put secret
-# https://docs.github.com/en/rest/actions/secrets#create-or-update-a-repository-secret
+# https://docs.python.org/3/library/asyncio-policy.html?highlight=set_event_loop_policy#asyncio.WindowsSelectorEventLoopPolicy  # noqa: E501
+asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
 
 
-def encrypt(public_key: str, secret_value: str) -> str:
-    """Encrypt a Unicode string using the public key."""
-    public_key = public.PublicKey(public_key.encode("utf-8"), encoding.Base64Encoder())
-    sealed_box = public.SealedBox(public_key)
-    encrypted = sealed_box.encrypt(secret_value.encode("utf-8"))
-    return b64encode(encrypted).decode("utf-8")
+async def add_local_env_to_secrets(env_file_path):
+    """
+    # todo
+    Args:
+        env_file_path:
+
+    Returns:
+
+    See Also:
+        1. https://docs.python.org/3/library/asyncio-task.html#asyncio.create_task
+    """
+    github_object = GitHubActions()
+    github_object.get_repo_public_key()
+    background_tasks = set()
+
+    with open(env_file_path) as fp:
+        for line in fp:
+            if line.startswith("#") or not line.strip():
+                continue
+            key, value = line.strip().split("=", 1)
+            print(f"Adding :{key} to Github Actions Secret.")
+            # asyncio.run(github_object.create_or_update_repo_secret(key, value))
+            task = asyncio.create_task(
+                github_object.create_or_update_repo_secret(key, value)
+            )
+            # Add task to the set. This creates a strong reference.
+            background_tasks.add(task)
+            # To prevent keeping references to finished tasks forever,
+            # make each task remove its own reference from the set after
+            # completion:
+            task.add_done_callback(background_tasks.discard)
+        await asyncio.gather(*background_tasks)
 
 
-url = f"https://api.github.com/repos/{owner}/{repo}/actions/secrets/public-key"
-# make the request and return the json
-user_data = requests.get(url, headers=headers).json()
-pprint(user_data)
+def add_secretes():
+    """
+    # Todo
+    Returns:
+
+    """
+    env_files_path = os.path.join(BASE_DIR, ".envs/.local")
+    env_files = os.listdir(env_files_path)
+    exclude_files = [".gh_credentials"]
+    for env_file in filter(lambda x: x not in exclude_files, env_files):
+        file_path = os.path.join(env_files_path, env_file)
+        if os.path.exists(file_path):
+            asyncio.run(add_local_env_to_secrets(file_path))
 
 
-secret_name = "some_other_secret_value"
-secret_value = "My Name is Kiran"
-encrypted_secret = encrypt(user_data.get("key"), secret_value)
-pprint(encrypted_secret)
-url = f"https://api.github.com/repos/{owner}/{repo}/actions/secrets/{secret_name}"
-
-data = {"encrypted_value": encrypted_secret, "key_id": user_data.get("key_id")}
-user_data = requests.put(url, headers=headers, data=json.dumps(data)).json()
-pprint(user_data)
-
-# -------------------------------------------------------------------------------------
-# repo = 'some_repo'
-# description = 'Created with api'
-#
-# payload = {'name': repo, 'description': description, 'auto_init': 'true'}
-#
-# login = requests.post('https://api.github.com/' + 'user/repos', auth=(user, token),
-#                       data=json.dumps(payload)
-#                       )
-# user = 'username'
-# headers = {'Authorization': 'token ' + token}
-#
-# login = requests.delete('https://api.github.com/' + 'repos/' + user + '/' + repo,
-#                         headers=headers
-#                         )
-
-# headers = {'Authorization': 'token ' + token}
-#
-# login = requests.get('https://api.github.com/user', headers=headers)
-# print(login.json())
-
-# username = 'user'
-# token = 'token'
-#
-# login = requests.get('https://api.github.com/search/repositories?q=github+api',
-#                      auth=(username, token)
-#                      )
-
-
-
-# r = requests.post(
-#     url=url,
-#     data=json_data,
-#     headers=headers
-# )
+if __name__ == "__main__":
+    sys.path.insert(0, os.path.abspath("../.."))
+    add_secretes()

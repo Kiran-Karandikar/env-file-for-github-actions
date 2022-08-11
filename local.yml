@@ -6,3 +6,16 @@ services:
     container_name: local_bash
     volumes:
       - ./base:/base
+    command: tail -f /dev/null
+
+  docs:
+    container_name: local_docs
+    platform: linux/x86_64
+    build:
+      context: .
+    volumes:
+      - ./base:/base
+    ports:
+      - "9000:9000"
+    command: compose/local-env/sphinxdocs/startdocs.sh
+    working_dir: /base
