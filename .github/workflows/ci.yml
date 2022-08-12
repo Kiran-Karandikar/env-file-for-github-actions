@@ -12,21 +12,21 @@ on:
     paths-ignore: ["docs/**"]
 
 jobs:
-  linter:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Code Repository
-        uses: actions/checkout@v3
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: "3.9"
-          cache: pip
-          cache-dependency-path: |
-            **/base.txt
-            **/local.txt
-      - name: Run pre-commit
-        uses: pre-commit/action@v2.0.3
+#  linter:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Checkout Code Repository
+#        uses: actions/checkout@v3
+#      - name: Set up Python
+#        uses: actions/setup-python@v4
+#        with:
+#          python-version: "3.9"
+#          cache: pip
+#          cache-dependency-path: |
+#            **/base.txt
+#            **/local.txt
+#      - name: Run pre-commit
+#        uses: pre-commit/action@v2.0.3
 
   pytest:
     runs-on: ubuntu-latest
@@ -35,7 +35,12 @@ jobs:
         uses: actions/checkout@v3
       - name: 'Create env file'
         working-directory: base
-        run: ./compose/local-env/actions.sh
+        run: |
+          mkdir -p .envs/.local
+          touch .envs/.local/.sample
+          echo SECRET_1=${{ secrets.SECRET_1 }} >> .envs/.local/.sample
+          echo SECRET_2=${{ secrets.SECRET_2 }} >> .envs/.local/.sample
+          cat .envs/.local/.sample
         shell: bash
       - name: Build the Stack
         run: docker compose -f local.yml build
