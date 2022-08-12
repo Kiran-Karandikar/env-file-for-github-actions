@@ -7,25 +7,25 @@
 [![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
-[contributors-shield]: https://img.shields.io/github/contributors/kiran-karandikar/Python-template?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/kiran-karandikar/.env-file-for-github-actions?style=for-the-badge
 
-[contributors-url]: https://github.com/Kiran-Karandikar/Python-template/graphs/contributors
+[contributors-url]: https://github.com/Kiran-Karandikar/.env-file-for-github-actions/graphs/contributors
 
-[forks-shield]: https://img.shields.io/github/forks/Kiran-Karandikar/Python-template?style=for-the-badge
+[forks-shield]: https://img.shields.io/github/forks/Kiran-Karandikar/.env-file-for-github-actions?style=for-the-badge
 
-[forks-url]: https://github.com/Kiran-Karandikar/Python-template/network
+[forks-url]: https://github.com/Kiran-Karandikar/.env-file-for-github-actions/network
 
-[stars-shield]: https://img.shields.io/github/stars/Kiran-Karandikar/Python-template?style=for-the-badge
+[stars-shield]: https://img.shields.io/github/stars/Kiran-Karandikar/.env-file-for-github-actions?style=for-the-badge
 
-[stars-url]: https://github.com/Kiran-Karandikar/Python-template/stargazers
+[stars-url]: https://github.com/Kiran-Karandikar/.env-file-for-github-actions/stargazers
 
-[issues-shield]: https://img.shields.io/github/issues/Kiran-Karandikar/Python-template?style=for-the-badge
+[issues-shield]: https://img.shields.io/github/issues/Kiran-Karandikar/.env-file-for-github-actions?style=for-the-badge
 
-[issues-url]: https://github.com/Kiran-Karandikar/Python-template/issues
+[issues-url]: https://github.com/Kiran-Karandikar/.env-file-for-github-actions/issues
 
-[license-shield]: https://img.shields.io/github/license/Kiran-Karandikar/Python-template?style=for-the-badge
+[license-shield]: https://img.shields.io/github/license/Kiran-Karandikar/.env-file-for-github-actions?style=for-the-badge
 
-[license-url]: https://github.com/Kiran-Karandikar/Python-template/blob/master/LICENSE
+[license-url]: https://github.com/Kiran-Karandikar/.env-file-for-github-actions/blob/master/LICENSE
 
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 
@@ -37,20 +37,20 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-<h3 align="center">Python-template</h3>
+<h3 align="center">.env-file-for-github-actions</h3>
   <p align="center">
     SIMPLE PYTHON APP TEMPLATE
     <br />
-    <a href="https://kiran-karandikar.github.io/Python-template"><strong>Preview</strong></a>
+    <a href="https://kiran-karandikar.github.io/.env-file-for-github-actions"><strong>Preview</strong></a>
     <br />
-    <a href="https://github.com/kiran-karandikar/Python-template"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/kiran-karandikar/.env-file-for-github-actions"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/kiran-karandikar/Python-template">View Demo</a>
+    <a href="https://github.com/kiran-karandikar/.env-file-for-github-actions">View Demo</a>
     ·
-    <a href="https://github.com/kiran-karandikar/Python-template/issues">Report Bug</a>
+    <a href="https://github.com/kiran-karandikar/.env-file-for-github-actions/issues">Report Bug</a>
     ·
-    <a href="https://github.com/kiran-karandikar/Python-template/issues">Request Feature</a>
+    <a href="https://github.com/kiran-karandikar/.env-file-for-github-actions/issues">Request Feature</a>
   </p>
 </div>
 
@@ -88,7 +88,7 @@
 ## About The Project
 
 Here's a blank template to get started: To avoid retyping too much info. Do a
-search and replace with your text editor for the following: `Python-template`
+search and replace with your text editor for the following: `.env-file-for-github-actions`
 , `project_title`, `SIMPLE PYTHON APP TEMPLATE`
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -120,10 +120,9 @@ To get a local copy up and running follow these simple example steps.
 
 1. Clone the repository
    ```sh
-    $ git clone https://github.com/kiran-karandikar/Python-template.git
+    $ git clone https://github.com/kiran-karandikar/.env-file-for-github-actions.git
    ```
 2. For local development, see the following:
-   - [Developing locally](./base/docs/source/developing-locally.rst)
    - [Developing locally using docker](./base/docs/source/developing-locally-docker.rst)
 
 <!-- USAGE EXAMPLES -->
@@ -149,7 +148,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 - [ ] Feature 3
 	- [ ] Nested Feature
 
-See the [open issues](https://github.com/kiran-karandikar/Python-template/issues) for a
+See the [open issues](https://github.com/kiran-karandikar/.env-file-for-github-actions/issues) for a
 full list of proposed features (and known issues).
 
 > Use appropriate issue template `./github/ISSUE_TEMPLATE` to create appropriate
@@ -184,6 +183,6 @@ Distributed under the `MIT License`. See `LICENSE` for more information.
 - [Kiran Karandikar](mailto:hkarandikar@gmail.com)
 
 Project
-Link: [https://github.com/kiran-karandikar/Python-template](https://github.com/kiran-karandikar/Python-template)
+Link: [https://github.com/kiran-karandikar/.env-file-for-github-actions](https://github.com/kiran-karandikar/.env-file-for-github-actions)
 
 <p align="right">(<a href="#top">back to top</a>)</p>

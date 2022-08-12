@@ -1,12 +1,17 @@
 version: "3.9"
 
 services:
-  bash-container:
-    image: bash:latest
+  bash:
+    build:
+      context: .
     container_name: local_bash
+    # Added to test if environment variables are accessible
+    env_file:
+      - ./base/.envs/.local/.sample
     volumes:
       - ./base:/base
-    command: tail -f /dev/null
+    command: compose/local-env/test.sh
+    working_dir: /base
 
   docs:
     container_name: local_docs

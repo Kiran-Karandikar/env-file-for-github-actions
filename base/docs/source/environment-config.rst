@@ -19,7 +19,6 @@ Github Actions
 
 - Update ``./github`` for various github actions.
     - ``/workflows/``:
-        - ``checks.yml``:  to modify testing, linting as per need etc.
         - ``ci.yml`` for ci related tasks.
         - ``pre-commit-autoupdate.yml`` for auto updating pre-commit hooks with PR request support.
     - ``dependabot.yml`` for setting `GitHub dependabot`_.

@@ -10,7 +10,7 @@ Docker:
 
 To fix unknown docker related issues, you can either:
 
-- Clear your project-related Docker cache with ``docker-compose -f local.yml down --volumes --rmi all``.
+- Clear your project-related Docker cache with ``docker compose -f local.yml down --volumes --rmi all``.
 - Use the Docker volume sub-commands to find volumes (`ls`_) and remove them (`rm`_).
 - Use the `prune`_ command to clear system-wide (use with care!).
 

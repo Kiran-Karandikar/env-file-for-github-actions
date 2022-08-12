@@ -9,11 +9,13 @@ import environ
 env = environ.Env()
 
 # Set the project base directory
+LOCAL_ENV = ".envs/.local"
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+ENV_FILE_PATH = os.path.join(BASE_DIR, LOCAL_ENV)
 
 # Take environment variables from .env file
 # For non-docker based
-environ.Env.read_env(env_file=os.path.join(BASE_DIR, ".envs/.local/.gh_credentials"))
+environ.Env.read_env(env_file=os.path.join(ENV_FILE_PATH, ".gh_credentials"))
 # ------------------------------------------------------------------------------
 # Github Credentials
 # ------------------------------------------------------------------------------

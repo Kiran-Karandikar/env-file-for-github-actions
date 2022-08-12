@@ -72,10 +72,10 @@ repos:
         args: [ "--config=./base/setup.cfg" ]
         additional_dependencies: [ flake8-isort ]
 
-  - repo: https://github.com/shellcheck-py/shellcheck-py
-    rev: v0.8.0.4
-    hooks:
-      - id: shellcheck
+#  - repo: https://github.com/shellcheck-py/shellcheck-py
+#    rev: v0.8.0.4
+#    hooks:
+#      - id: shellcheck
 
   - repo: https://github.com/IamTheFij/docker-pre-commit
     rev: v2.1.0
@@ -90,9 +90,9 @@ repos:
         language: system
         types: [python]
         pass_filenames: false
-        verbose: false  # true for command line output
+        verbose: True  # false for no command line output
         log_file: ./base/secrets_updater.log
-        stages: [push]
+#        stages: [push]
 
 # sets up .pre-commit-ci.yaml to ensure pre-commit dependencies stay up to date
 # https://pre-commit.ci/

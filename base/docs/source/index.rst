@@ -27,11 +27,7 @@ Contents
     :maxdepth: 2
 
     environment-config
-    developing-locally
     developing-locally-docker
     modules
-    linting
     document
-    testing
     troubleshooting
-    deployment

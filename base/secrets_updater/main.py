@@ -5,11 +5,13 @@ import sys
 
 # 3rd Party Libraries
 from github import GitHubActions
-from settings import BASE_DIR
+from settings import ENV_FILE_PATH
 
 
 # https://docs.python.org/3/library/asyncio-policy.html?highlight=set_event_loop_policy#asyncio.WindowsSelectorEventLoopPolicy  # noqa: E501
 asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
+
+EXCLUDE_ENV_FILES = [".gh_credentials"]
 
 
 async def add_local_env_to_secrets(env_file_path):
@@ -52,11 +54,9 @@ def add_secretes():
     Returns:
 
     """
-    env_files_path = os.path.join(BASE_DIR, ".envs/.local")
-    env_files = os.listdir(env_files_path)
-    exclude_files = [".gh_credentials"]
-    for env_file in filter(lambda x: x not in exclude_files, env_files):
-        file_path = os.path.join(env_files_path, env_file)
+    env_files = os.listdir(ENV_FILE_PATH)
+    for env_file in filter(lambda x: x not in EXCLUDE_ENV_FILES, env_files):
+        file_path = os.path.join(ENV_FILE_PATH, env_file)
         if os.path.exists(file_path):
             asyncio.run(add_local_env_to_secrets(file_path))
 
