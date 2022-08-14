@@ -72,10 +72,10 @@ repos:
         args: [ "--config=./base/setup.cfg" ]
         additional_dependencies: [ flake8-isort ]
 
-#  - repo: https://github.com/shellcheck-py/shellcheck-py
-#    rev: v0.8.0.4
-#    hooks:
-#      - id: shellcheck
+  - repo: https://github.com/shellcheck-py/shellcheck-py
+    rev: v0.8.0.4
+    hooks:
+      - id: shellcheck
 
   - repo: https://github.com/IamTheFij/docker-pre-commit
     rev: v2.1.0
