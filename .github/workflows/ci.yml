@@ -36,21 +36,13 @@ jobs:
       - name: 'Create env file'
         working-directory: base
         run: |
-          mkdir -p .envs/.local
-          touch .envs/.local/.sample
-          echo SECRET_1=${{ secrets.SECRET_1 }} >> .envs/.local/.sample
-          echo SECRET_2=${{ secrets.SECRET_2 }} >> .envs/.local/.sample
-          cat .envs/.local/.sample
+         source ./compose/local-env/actions.sh
         shell: bash
       - name: Build the Stack
         run: docker compose -f local.yml build
-      - name: 'Create Pytest log file'
-        working-directory: base
-        run: |
-          touch pytest.log
-        shell: bash
+
       - name: Run Tests
-        run: docker compose -f local.yml run bash pytest
+        run: docker compose -f local.yml run --user root bash pytest
 
       - name: Tear down the Stack
         run: docker compose -f local.yml down

@@ -29,3 +29,10 @@ git update-index --chmod=+x provisioning/import_provisioning.sh
 git commit -m "Changing file permissions"
 
 update-index is similar to add in that it adds the change to the index, so you’ll have to commit and push as usual.
+
+
+https://pre-commit.com/#automatically-enabling-pre-commit-on-repositories
+
+
+git config --global init.templateDir %CD%\.git-template
+pre-commit init-templatedir %CD%\.git-template
