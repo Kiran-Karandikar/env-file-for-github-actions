@@ -39,6 +39,7 @@ Before doing any git commit, `pre-commit`_ should be installed globally on your 
 
     $ git init
     $ pre-commit install
+    $ pre-commit install --hook-type pre-push
 
 Failing to do so will result with a bunch of CI and Linter errors that can be avoided with pre-commit.
 

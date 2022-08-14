@@ -92,7 +92,7 @@ repos:
         pass_filenames: false
         verbose: True  # false for no command line output
         log_file: ./base/secrets_updater.log
-        stages: [push, commit]
+        stages: [ push ]
 
 # sets up .pre-commit-ci.yaml to ensure pre-commit dependencies stay up to date
 # https://pre-commit.ci/
