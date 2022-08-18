@@ -7,53 +7,58 @@
 [![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
-[contributors-shield]: https://img.shields.io/github/contributors/kiran-karandikar/.env-file-for-github-actions?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/kiran-karandikar/env-file-for-github-actions?style=for-the-badge
 
-[contributors-url]: https://github.com/Kiran-Karandikar/.env-file-for-github-actions/graphs/contributors
+[contributors-url]: https://github.com/Kiran-Karandikar/env-file-for-github-actions/graphs/contributors
 
-[forks-shield]: https://img.shields.io/github/forks/Kiran-Karandikar/.env-file-for-github-actions?style=for-the-badge
+[forks-shield]: https://img.shields.io/github/forks/Kiran-Karandikar/env-file-for-github-actions?style=for-the-badge
 
-[forks-url]: https://github.com/Kiran-Karandikar/.env-file-for-github-actions/network
+[forks-url]: https://github.com/Kiran-Karandikar/env-file-for-github-actions/network
 
-[stars-shield]: https://img.shields.io/github/stars/Kiran-Karandikar/.env-file-for-github-actions?style=for-the-badge
+[stars-shield]: https://img.shields.io/github/stars/Kiran-Karandikar/env-file-for-github-actions?style=for-the-badge
 
-[stars-url]: https://github.com/Kiran-Karandikar/.env-file-for-github-actions/stargazers
+[stars-url]: https://github.com/Kiran-Karandikar/env-file-for-github-actions/stargazers
 
-[issues-shield]: https://img.shields.io/github/issues/Kiran-Karandikar/.env-file-for-github-actions?style=for-the-badge
+[issues-shield]: https://img.shields.io/github/issues/Kiran-Karandikar/env-file-for-github-actions?style=for-the-badge
 
-[issues-url]: https://github.com/Kiran-Karandikar/.env-file-for-github-actions/issues
+[issues-url]: https://github.com/Kiran-Karandikar/env-file-for-github-actions/issues
 
-[license-shield]: https://img.shields.io/github/license/Kiran-Karandikar/.env-file-for-github-actions?style=for-the-badge
+[license-shield]: https://img.shields.io/github/license/Kiran-Karandikar/env-file-for-github-actions?style=for-the-badge
 
-[license-url]: https://github.com/Kiran-Karandikar/.env-file-for-github-actions/blob/master/LICENSE
+[license-url]: https://github.com/Kiran-Karandikar/env-file-for-github-actions/blob/master/LICENSE
 
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 
 [linkedin-url]: https://linkedin.com/in/kiran-karandikar
 
-[ci-shield]: https://github.com/Kiran-Karandikar/.env-file-for-github-actions/actions/workflows/ci.yml/badge.svg
+[ci-shield]: https://github.com/Kiran-Karandikar/env-file-for-github-actions/actions/workflows/ci.yml/badge.svg
 
-[ci-url]: https://github.com/Kiran-Karandikar/.env-file-for-github-actions/actions/workflows/ci.yml
+[ci-url]: https://github.com/Kiran-Karandikar/env-file-for-github-actions/actions/workflows/ci.yml
+
+[doc-shield]: https://readthedocs.org/projects/env-file-for-github-actions/badge/?version=latest
+
+[doc-url]: https://env-file-for-github-actions.readthedocs.io/en/latest/?badge=latest
 
 ---------
 
 [![CI][ci-shield]][ci-url]
+[![Documentation Status][doc-shield]][doc-url]
 
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-<h3 align="center">.env-file-for-github-actions</h3>
+<h3 align="center">env-file-for-github-actions</h3>
   <p align="center">
     Update Github Action Secrets from local <code>.env</code> file
     <br />
-    <a href="https://.env-file-for-github-actions.readthedocs.io/en/latest/?"><strong>Explore the docs »</strong></a>
+    <a href="https://env-file-for-github-actions.readthedocs.io/en/latest/?"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/kiran-karandikar/.env-file-for-github-actions">View Demo</a>
+    <a href="https://github.com/kiran-karandikar/env-file-for-github-actions">View Demo</a>
     ·
-    <a href="https://github.com/kiran-karandikar/.env-file-for-github-actions/issues">Report Bug</a>
+    <a href="https://github.com/kiran-karandikar/env-file-for-github-actions/issues">Report Bug</a>
     ·
-    <a href="https://github.com/kiran-karandikar/.env-file-for-github-actions/issues">Request Feature</a>
+    <a href="https://github.com/kiran-karandikar/env-file-for-github-actions/issues">Request Feature</a>
   </p>
 </div>
 
@@ -122,7 +127,7 @@ Using GitHub Api and pre-commit hook, the github action secrets will be updated 
 
 1. Clone the repository
    ```sh
-    $ git clone https://github.com/kiran-karandikar/.env-file-for-github-actions.git
+    $ git clone https://github.com/kiran-karandikar/env-file-for-github-actions.git
    ```
 2. For local development, see the following:
    - [Workflow](./base/docs/source/workflow.rst)
@@ -143,7 +148,7 @@ Using GitHub Api and pre-commit hook, the github action secrets will be updated 
   ```
 
 _For more examples, please refer to
-the [Documentation](https://.env-file-for-github-actions.readthedocs.io/en/latest/?)_ built using `Sphinx`
+the [Documentation](https://env-file-for-github-actions.readthedocs.io/en/latest/?)_ built using `Sphinx`
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -154,7 +159,7 @@ the [Documentation](https://.env-file-for-github-actions.readthedocs.io/en/lates
 
 - [ ] Use bash script in to export variables in ``ci.yml``.
 
-See the [open issues](https://github.com/kiran-karandikar/.env-file-for-github-actions/issues) for a
+See the [open issues](https://github.com/kiran-karandikar/env-file-for-github-actions/issues) for a
 full list of proposed features (and known issues).
 
 
@@ -177,6 +182,6 @@ Distributed under the `MIT License`. See `LICENSE` for more information.
 - [Kiran Karandikar](mailto:hkarandikar@gmail.com)
 
 Project
-Link: [https://github.com/kiran-karandikar/.env-file-for-github-actions](https://github.com/kiran-karandikar/.env-file-for-github-actions)
+Link: [https://github.com/kiran-karandikar/env-file-for-github-actions](https://github.com/kiran-karandikar/env-file-for-github-actions)
 
 <p align="right">(<a href="#top">back to top</a>)</p>

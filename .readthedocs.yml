@@ -13,8 +13,8 @@ build:
 
 # Build documentation in the docs/ directory with Sphinx
 sphinx:
-  configuration: /base/docs/conf.py
+  configuration: base/docs/conf.py
 
 python:
   install:
-    - requirements: /base/docs/requirements.txt
+    - requirements: base/docs/requirements.txt
