@@ -6,17 +6,10 @@ See Also:
 # Standard Library
 import asyncio
 import os
-import sys
-
-
-sys.path.insert(0, os.path.abspath("../.."))
 
 # Project Libraries
-from secrets_updater.github import GitHubActions  # noqa: E402
-from secrets_updater.settings import (  # noqa: E402
-    ENV_FILE_PATH,
-    EXCLUDE_ENV_FILES_FROM_UPLOAD,
-)
+from github import GitHubActions
+from settings import ENV_FILE_PATH, EXCLUDE_ENV_FILES_FROM_UPLOAD
 
 
 asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())

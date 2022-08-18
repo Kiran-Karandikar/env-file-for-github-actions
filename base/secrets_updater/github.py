@@ -11,8 +11,8 @@ import aiohttp
 import requests
 
 # Project Libraries
-from secrets_updater.settings import AUTH_HEADERS, REPO_PUBLIC_KEY_URL, SECRETS_URL
-from secrets_updater.utility import encrypt
+from settings import AUTH_HEADERS, REPO_PUBLIC_KEY_URL, SECRETS_URL
+from utility import encrypt
 
 
 class GitHubActions:
