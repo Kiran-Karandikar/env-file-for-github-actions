@@ -21,18 +21,17 @@ To fix unknown docker related issues, you can either:
 Others
 ------
 
-That most likely means that your ./.github/scripts/backend_decrypt.sh script doesn’t have the “execute” filesystem permission set. I assume you’re developing on Windows locally, which doesn’t have that kind of permission system.
+..
 
-You can tell git to add the permission anyway with this command:
+    Permission denied while executing bash script in GitHub Actions.
 
-git update-index --chmod=+x provisioning/import_provisioning.sh
-git commit -m "Changing file permissions"
+That most likely means that your <path_to_script>/<script_name>.sh script doesn't have the execute filesystem permission set.
 
-update-index is similar to add in that it adds the change to the index, so you’ll have to commit and push as usual.
+Instruct git to add the permission anyway with this command:
 
+.. code-block::
 
-https://pre-commit.com/#automatically-enabling-pre-commit-on-repositories
+    $ git update-index --chmod=+x <path_to_script>/<script_name>.sh
+    $ git commit -m "Changing file permissions"
 
-
-git config --global init.templateDir %CD%\.git-template
-pre-commit init-templatedir %CD%\.git-template
+update-index is similar to add in that it adds the change to the index, so you have to commit and push as usual.

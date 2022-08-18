@@ -39,11 +39,9 @@
 <div align="center">
 <h3 align="center">.env-file-for-github-actions</h3>
   <p align="center">
-    SIMPLE PYTHON APP TEMPLATE
+    Update Github Action Secrets from local <code>.env</code> file
     <br />
-    <a href="https://kiran-karandikar.github.io/.env-file-for-github-actions"><strong>Preview</strong></a>
-    <br />
-    <a href="https://github.com/kiran-karandikar/.env-file-for-github-actions"><strong>Explore the docs »</strong></a>
+    <a href="https://.env-file-for-github-actions.readthedocs.io/en/latest/?"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://github.com/kiran-karandikar/.env-file-for-github-actions">View Demo</a>
@@ -87,34 +85,33 @@
 
 ## About The Project
 
-Here's a blank template to get started: To avoid retyping too much info. Do a
-search and replace with your text editor for the following: `.env-file-for-github-actions`
-, `project_title`, `SIMPLE PYTHON APP TEMPLATE`
+This is a sample project to update the github action secrets from local `.env` file.
+When using github actions, many times the jobs in `ci` needs access to environment variables.
+Using GitHub Api and pre-commit hook, the github action secrets will be updated on every `push` action from local `.env` file/s.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Built With
 
-- [MailHog](https://github.com/mailhog/MailHog) Web and API based SMTP testing.
-
+- [Github API](https://github.com/mailhog/MailHog).
+- [AIOHTTP](https://docs.aiohttp.org/en/latest/index.html#aiohttp-installation) Asynchronous HTTP Client/Server for asyncio and Python.
+- [PyNaCl](https://pynacl.readthedocs.io/en/latest/) for public key encryption.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
 
 
 <!-- GETTING STARTED -->
 
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project
-locally.
-To get a local copy up and running follow these simple example steps.
-
 ### Prerequisites
 
 - Optional:
-  - [Dokcer](https://www.docker.com/get-started/) and [Docker dependencies](https://docs.docker.com/desktop/install/windows-install/) installed if using dokcer based setup.
-  - Use [ruby installer](https://rubyinstaller.org/) if using [pre-commit hook](https://pre-commit.com/) : [Search and Replace](https://github.com/mattlqx/pre-commit-search-and-replace)
+    - [Dokcer](https://www.docker.com/get-started/)
+      and [Docker dependencies](https://docs.docker.com/desktop/install/windows-install/)
+      installed if using dokcer based setup.
+    - Use [ruby installer](https://rubyinstaller.org/) if
+      using [pre-commit hook](https://pre-commit.com/) : [Search and Replace](https://github.com/mattlqx/pre-commit-search-and-replace)
 
 ### Installation
 
@@ -123,36 +120,38 @@ To get a local copy up and running follow these simple example steps.
     $ git clone https://github.com/kiran-karandikar/.env-file-for-github-actions.git
    ```
 2. For local development, see the following:
-   - [Developing locally using docker](./base/docs/source/developing-locally-docker.rst)
+   - [Workflow](./base/docs/source/workflow.rst)
 
 <!-- USAGE EXAMPLES -->
 
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional
-screenshots, code examples and demos work well in this space. You may also link
-to more resources.
+- Add `GH_ACCESS_TOKEN`, `OWNER`, `Repository` in  details in `.envs\.local\.gh_credentials`
+    - Refer to `envs-example` for creating `.env` files.
+- Setup docker containers using:
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+  ```shell
+  docker build .
+  docker compose -f local.yml build
+  docker compose -f local.yml up
+  docker compose -f local.yml down
+  ```
+
+_For more examples, please refer to
+the [Documentation](https://.env-file-for-github-actions.readthedocs.io/en/latest/?)_ built using `Sphinx`
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
 
 
 <!-- ROADMAP -->
 
 ## Roadmap
 
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
-	- [ ] Nested Feature
+- [ ] Use bash script in to export variables in ``ci.yml``.
 
 See the [open issues](https://github.com/kiran-karandikar/.env-file-for-github-actions/issues) for a
 full list of proposed features (and known issues).
 
-> Use appropriate issue template `./github/ISSUE_TEMPLATE` to create appropriate
-  issue.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -161,16 +160,6 @@ full list of proposed features (and known issues).
 ## License
 
 Distributed under the `MIT License`. See `LICENSE` for more information.
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-<!-- ACKNOWLEDGMENTS -->
-
-## Acknowledgments
-
-* []()
-* []()
-* []()
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 

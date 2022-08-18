@@ -9,15 +9,40 @@ Environment
 
     ``./base/envs-example/readme.md``: for guide to create environment files.
 
+Environment variables defined in ``.gh_credentials``.
 
-Github Actions
-~~~~~~~~~~~~~~
++-----------------------+----------------+-----------------------------------------------------------+
+| Environment Variable  | Default Value  | Description                                               |
++=======================+================+===========================================================+
+| ``GH_ACCESS_TOKEN``   | None           | GitHub personal access token. `Personal Access Tokens`_   |
++-----------------------+----------------+-----------------------------------------------------------+
+| ``OWNER``             | None           | Owner of repo.                                            |
++-----------------------+----------------+-----------------------------------------------------------+
+| ``REPO``              | None           | Repo name                                                 |
++-----------------------+----------------+-----------------------------------------------------------+
+
+In addition to above variables ``secrets_updater/settings.py`` defines configuration variables used for interacting with github api.
+
+.. seealso::
+
+    `Github API`_ for endpoint urls, request format and other details.
+
++------------------------------------+----------------------+---------------------------------------------------------+
+| Environment Variable               | Default Value        | Description                                             |
++====================================+======================+=========================================================+
+| ``LOCAL_ENV``                      | ``.envs/.local``     | Path for local environment file.                        |
++------------------------------------+----------------------+---------------------------------------------------------+
+| ``EXCLUDE_ENV_FILES_FROM_UPLOAD``  | ``.gh_credentials``  | List of file names to be excluded form upload process.  |
++------------------------------------+----------------------+---------------------------------------------------------+
+
+GitHub
+++++++
 
 .. note::
 
-    Create necessary `GitHub secrets`_  and tokens_  as referenced in ``yml`` files.
+    Create necessary `GitHub secrets`_, `Personal Access Tokens`_  and tokens_  as referenced in ``yml`` files.
 
-- Update ``./github`` for various github actions.
+- Update ``./github`` for various github related actions.
     - ``/workflows/``:
         - ``ci.yml`` for ci related tasks.
         - ``pre-commit-autoupdate.yml`` for auto updating pre-commit hooks with PR request support.
@@ -36,6 +61,8 @@ Miscellaneous
 .. _GitHub dependabot: https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
 .. _GitHub secrets: https://docs.github.com/en/actions/security-guides/encrypted-secrets
 .. _tokens: https://docs.github.com/en/actions/security-guides/automatic-token-authentication
+.. _Personal Access Tokens: https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
+.. _Github API: https://docs.github.com/en/rest
 .. _editorconfig: http://editorconfig.org
 .. _git-attributes: https://www.git-scm.com/docs/gitattributes
 .. _search_and_replace: https://github.com/mattlqx/pre-commit-search-and-replace

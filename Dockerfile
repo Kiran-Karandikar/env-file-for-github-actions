@@ -12,10 +12,6 @@ COPY ./base /base
 COPY ./base/requirements /tmp/requirements
 WORKDIR /base
 
-# Note: comment the following in run command if build takes too long.
-# ` apk add --no-cache texlive-full && \`
-# it's optional and required to generate pdf using `make latexpdf` when used
-# in conjuction with sphinx documentaion generator.
 RUN python -m venv /py && \
     /py/bin/pip install --upgrade pip && \
     apk add --update --no-cache  \

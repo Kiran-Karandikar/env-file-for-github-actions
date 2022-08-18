@@ -1,32 +1,34 @@
+"""Wrapper Script to invoke GitHub api and related operations.
+
+See Also:
+    1. https://docs.python.org/3/library/asyncio-policy.html?highlight=set_event_loop_policy#asyncio.WindowsSelectorEventLoopPolicy  # noqa: E501
+"""
 # Standard Library
 import asyncio
 import os
 import sys
 
-# 3rd Party Libraries
-from github import GitHubActions
-from settings import ENV_FILE_PATH
+# Project Libraries
+from secrets_updater.github import GitHubActions
+from secrets_updater.settings import ENV_FILE_PATH, EXCLUDE_ENV_FILES_FROM_UPLOAD
 
 
-# https://docs.python.org/3/library/asyncio-policy.html?highlight=set_event_loop_policy#asyncio.WindowsSelectorEventLoopPolicy  # noqa: E501
 asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
-
-EXCLUDE_ENV_FILES = [".gh_credentials"]
 
 
 async def add_local_env_to_secrets(env_file_path):
-    """
-    # todo
-    Args:
-        env_file_path:
+    """Upload secrets defined in ``env_file_path`` to GitHub actions.
 
-    Returns:
+    Every secret listed in ``env_file_path`` will be updated to repository
+    secrets.Except Secrets starting with ``#``
+
+    Args:
+        env_file_path (str): Complete file path of local environment file.
 
     See Also:
         1. https://docs.python.org/3/library/asyncio-task.html#asyncio.create_task
     """
     github_object = GitHubActions()
-    github_object.get_repo_public_key()
     background_tasks = set()
 
     with open(env_file_path) as fp:
@@ -35,7 +37,6 @@ async def add_local_env_to_secrets(env_file_path):
                 continue
             key, value = line.strip().split("=", 1)
             print(f"Adding :{key} to Github Actions Secret.")
-            # asyncio.run(github_object.create_or_update_repo_secret(key, value))
             task = asyncio.create_task(
                 github_object.create_or_update_repo_secret(key, value)
             )
@@ -49,13 +50,14 @@ async def add_local_env_to_secrets(env_file_path):
 
 
 def add_secretes():
-    """
-    # Todo
-    Returns:
+    """Invokes async upload action for every env file defined in ``ENV_FILE_PATH``.
 
+    All env files defined in ``EXCLUDE_ENV_FILES_FROM_UPLOAD`` will be excluded from
+    upload.
     """
-    env_files = os.listdir(ENV_FILE_PATH)
-    for env_file in filter(lambda x: x not in EXCLUDE_ENV_FILES, env_files):
+    for env_file in filter(
+        lambda x: x not in EXCLUDE_ENV_FILES_FROM_UPLOAD, os.listdir(ENV_FILE_PATH)
+    ):
         file_path = os.path.join(ENV_FILE_PATH, env_file)
         if os.path.exists(file_path):
             asyncio.run(add_local_env_to_secrets(file_path))

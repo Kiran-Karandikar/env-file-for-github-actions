@@ -12,6 +12,7 @@ env = environ.Env()
 LOCAL_ENV = ".envs/.local"
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 ENV_FILE_PATH = os.path.join(BASE_DIR, LOCAL_ENV)
+EXCLUDE_ENV_FILES_FROM_UPLOAD = [".gh_credentials"]
 
 # Take environment variables from .env file
 # For non-docker based

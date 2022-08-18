@@ -1,3 +1,5 @@
+.. _with_docker:
+
 Getting Up and Running Locally With Docker
 ==========================================
 
@@ -47,8 +49,6 @@ Failing to do so will result with a bunch of CI and Linter errors that can be av
 Run the Stack
 -------------
 
-This brings up both Django and PostgreSQL. The first time it is run it might take a while to get started, but subsequent runs will occur quickly.
-
 Open a terminal at the project root and run the following for local development::
 
     $ docker compose -f local.yml up
@@ -66,28 +66,10 @@ To run in a detached (background) mode, just::
     $ docker-compose up -d
 
 
-Execute Management Commands
----------------------------
-
-As with any shell command that we wish to run in our container, this is done using the ``docker-compose -f local.yml run --rm`` command: ::
-
-    $ docker-compose -f local.yml run --rm app python manage.py migrate
-    $ docker-compose -f local.yml run --rm app python manage.py createsuperuser
-
-Here, ``app`` is the target service we are executing the commands against.
-
 Get into docker container's shell.: ::
 
     $ docker ps
     $ docker exec -it <container_name> bash
-    $ docker exec -it wrike_local_django bash
-
-
-(Optionally) Designate your Docker Development Server IP
---------------------------------------------------------
-
-When ``DEBUG`` is set to ``True``, the host is validated against ``['localhost', '127.0.0.1', '[::1]']``. This is adequate when running a ``virtualenv``. For Docker, in the ``config.settings.local``, add your host development server IP to ``INTERNAL_IPS`` or ``ALLOWED_HOSTS`` if the variable exists.
-
 
 .. _envs:
 
@@ -98,36 +80,26 @@ This is the excerpt from your project's ``local.yml``: ::
 
   # ...
 
-  db:
-    volumes:
-      - ./data/db:/var/lib/postgresql/data
+  sample-container:
     env_file:
-      - ./base/.envs/.local/.postgres
+      - ./base/.envs/.local/.sample-env-file-name
 
   # ...
 
-The most important thing for us here now is ``env_file`` section enlisting ``./base/.envs/.local/.postgres``. Generally, the stack's behavior is governed by a number of environment variables (`env(s)`, for short) residing in ``envs/``: ::
+The most important thing for us here now is ``env_file`` section enlisting ``./base/.envs/.local/.sample-env-file-name``. Generally, the stack's behavior is governed by a number of environment variables (`env(s)`, for short) residing in ``envs/``: ::
 
     .envs
     ├── .local
-    │   ├── .django
-    │   └── .postgres
+        └── .sample-env-file-name
     └── .production
-        ├── .django
-        └── .postgres
+        └── .sample-env-file-name
 
 By convention, for any service ``sI`` in environment ``e`` (you know ``someenv`` is an environment when there is a ``someenv.yml`` file in the project root), given ``sI`` requires configuration, a ``.envs/.e/.sI`` ``service configuration`` file exists.
 
-Consider the aforementioned ``./base/.envs/.local/.postgres``: ::
+Consider the aforementioned ``./base/.envs/.local/.sample-env-file-name``: ::
 
-    # PostgreSQL
-    # ------------------------------------------------------------------------------
-    POSTGRES_HOST=postgres
-    POSTGRES_DB=db_name
-    POSTGRES_USER=XgOWtQtJecsAbaIyslwGvFvPawftNaqO
-    POSTGRES_PASSWORD=jSljDz4whHuwO3aJIgVBrqEml5Ycbghorep4uVJ4xjDYQu0LfuTZdctj7y0YcCLu
-
-The three envs we are presented with here are ``POSTGRES_DB``, ``POSTGRES_USER``, and ``POSTGRES_PASSWORD`` (by the way, their values have also been generated for you). You might have figured out already where these definitions will end up; it's all the same with ``app`` service container envs.
+    SECRET_1=Some random value 1
+    SECRET_2=Some random value 2
 
 Tips & Tricks
 -------------
@@ -147,129 +119,17 @@ ipdb
 
 If you are using the following within your code to debug: ::
 
-    import ipdb; ipdb.set_trace()
+    import ipdb;
+    ipdb.set_trace()
 
 Then you may need to run the following for it to work as desired: ::
 
-    $ docker-compose -f local.yml run --rm --service-ports app
-
-
-django-debug-toolbar
-""""""""""""""""""""
-
-In order for ``django-debug-toolbar`` to work designate your Docker Machine IP with ``INTERNAL_IPS`` in ``local.py``.
-
+    $ docker-compose -f local.yml run --rm --service-ports <container_name>
 
 docker
 """"""
 
 The ``container_name`` from the yml file can be used to check on containers with docker commands, for example: ::
 
-    $ docker logs wrike_local_django
-    $ docker top wrike_local_postgres
-
-.. _mailhog_details_docker:
-
-Mailhog
-~~~~~~~
-
-When developing locally you can go with MailHog_ for email testing provided ``use_mailhog`` was set to ``y`` on setup. To proceed,
-
-#. make sure ``wrike_local_mailhog`` container is up and running;
-
-#. open up ``http://127.0.0.1:8025``.
-
-.. _Mailhog: https://github.com/mailhog/MailHog/
-
-Developing locally with HTTPS
------------------------------
-
-Increasingly it is becoming necessary to develop software in a secure environment in order that there are very few changes when deploying to production. Recently Facebook changed their policies for apps/sites that use Facebook login which requires the use of an HTTPS URL for the OAuth redirect URL. So if you want to use the ``users`` application with a OAuth provider such as Facebook, securing your communication to the local development environment will be necessary.
-
-In order to create a secure environment, we need to have a trusted SSL certificate installed in our Docker application.
-
-#.  **Let's Encrypt**
-
-    The official line from Let’s Encrypt is:
-
-    [For local development section] ... The best option: Generate your own certificate, either self-signed or signed by a local root, and trust it in your operating system’s trust store. Then use that certificate in your local web server. See below for details.
-
-    See `letsencrypt.org - certificates-for-localhost`_
-
-    .. _`letsencrypt.org - certificates-for-localhost`: https://letsencrypt.org/docs/certificates-for-localhost/
-
-#.  **mkcert: Valid Https Certificates For Localhost**
-
-    `mkcert`_ is a simple by design tool that hides all the arcane knowledge required to generate valid TLS certificates. It works for any hostname or IP, including localhost. It supports macOS, Linux, and Windows, and Firefox, Chrome and Java. It even works on mobile devices with a couple manual steps.
-
-    See https://blog.filippo.io/mkcert-valid-https-certificates-for-localhost/
-
-    .. _`mkcert`:  https://github.com/FiloSottile/mkcert/blob/master/README.md#supported-root-stores
-
-After installing a trusted TLS certificate, configure your docker installation. We are going to configure an ``nginx`` reverse-proxy server. This makes sure that it does not interfere with our ``traefik`` configuration that is reserved for production environments.
-
-These are the places that you should configure to secure your local environment.
-
-certs
-~~~~~
-
-Take the certificates that you generated and place them in a folder called ``certs`` in the project's root folder. Assuming that you registered your local hostname as ``my-dev-env.local``, the certificates you will put in the folder should have the names ``my-dev-env.local.crt`` and ``my-dev-env.local.key``.
-
-local.yml
-~~~~~~~~~
-
-#. Add the ``nginx-proxy`` service. ::
-
-    ...
-
-    nginx-proxy:
-      image: jwilder/nginx-proxy:alpine
-      container_name: nginx-proxy
-      ports:
-        - "80:80"
-        - "443:443"
-      volumes:
-        - /var/run/docker.sock:/tmp/docker.sock:ro
-        - ./certs:/etc/nginx/certs
-      restart: always
-      depends_on:
-        - app
-
-    ...
-
-#. Link the ``nginx-proxy`` to ``app`` through environment variables.
-
-   ``app`` already has an ``.env`` file connected to it. Add the following variables. You should do this especially if you are working with a team and you want to keep your local environment details to yourself.
-
-   ::
-
-      # HTTPS
-      # ------------------------------------------------------------------------------
-      VIRTUAL_HOST=my-dev-env.local
-      VIRTUAL_PORT=8000
-
-   The services run behind the reverse proxy.
-
-config/settings/local.py
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-You should allow the new hostname. ::
-
-  ALLOWED_HOSTS = ["localhost", "0.0.0.0", "127.0.0.1", "my-dev-env.local"]
-
-Rebuild your ``docker`` application. ::
-
-  $ docker-compose -f local.yml up -d --build
-
-Go to your browser and type in your URL bar ``https://my-dev-env.local``
-
-See `https with nginx`_ for more information on this configuration.
-
-  .. _`https with nginx`: https://codewithhugo.com/docker-compose-local-https/
-
-.gitignore
-~~~~~~~~~~
-
-Add ``certs/*`` to the ``.gitignore`` file. This allows the folder to be included in the repo but its contents to be ignored.
-
-*This configuration is for local development environments only. Do not use this for production since you might expose your local* ``rootCA-key.pem``.
+    $ docker logs sample_container
+    $ docker top docs

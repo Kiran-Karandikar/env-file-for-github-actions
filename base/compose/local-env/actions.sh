@@ -6,7 +6,6 @@ set -o nounset
 
 mkdir -p .envs/.local
 
-# todo: create sample note here
 
 #touch .envs/.local/.sample
 #echo SECRET_1='${{ secrets.SECRET_1 }}' >> .envs/.local/.sample

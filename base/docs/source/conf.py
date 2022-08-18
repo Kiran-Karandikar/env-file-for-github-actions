@@ -27,7 +27,6 @@ author = "Kiran Karandikar"
 # The full version, including alpha/beta/rc tags
 release = "0.1"
 
-
 # -- General configuration ---------------------------------------------------
 
 # Add any Sphinx extension module names here, as strings. They can be
@@ -77,7 +76,6 @@ master_doc = "index"
 
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = "sphinx"
-
 
 # -- Options for HTML output -------------------------------------------------
 
