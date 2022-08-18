@@ -64,5 +64,5 @@ def add_secretes():
 
 
 if __name__ == "__main__":
-    sys.path.insert(0, os.path.abspath("../.."))
+    sys.path.insert(0, os.path.abspath(".."))
     add_secretes()
