@@ -1,2 +1,5 @@
 sphinx==5.0.2
-furo==2022.06.21
+# https://pradyunsg.me/furo/
+furo
+# https://sphinx-extensions.readthedocs.io/en/latest/sphinx-copybutton.html
+sphinx-copybutton
