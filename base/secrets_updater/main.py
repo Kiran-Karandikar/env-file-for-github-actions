@@ -8,9 +8,15 @@ import asyncio
 import os
 import sys
 
+
+sys.path.insert(0, os.path.abspath(".."))
+
 # Project Libraries
-from secrets_updater.github import GitHubActions
-from secrets_updater.settings import ENV_FILE_PATH, EXCLUDE_ENV_FILES_FROM_UPLOAD
+from secrets_updater.github import GitHubActions  # noqa: E402
+from secrets_updater.settings import (  # noqa: E402
+    ENV_FILE_PATH,
+    EXCLUDE_ENV_FILES_FROM_UPLOAD,
+)
 
 
 asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
@@ -64,5 +70,4 @@ def add_secretes():
 
 
 if __name__ == "__main__":
-    sys.path.insert(0, os.path.abspath(".."))
     add_secretes()
