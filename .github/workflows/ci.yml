@@ -45,7 +45,7 @@ jobs:
         run: docker compose -f local.yml build
 
       - name: Run Tests
-        run: docker compose -f local.yml run --user root bash pytest
+        run: docker compose -f local.yml run --user root sample_container pytest
 
       - name: Tear down the Stack
         run: docker compose -f local.yml down

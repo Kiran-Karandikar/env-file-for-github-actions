@@ -31,8 +31,13 @@
 
 [linkedin-url]: https://linkedin.com/in/kiran-karandikar
 
+[ci-shield]: https://github.com/Kiran-Karandikar/.env-file-for-github-actions/actions/workflows/ci.yml/badge.svg
+
+[ci-url]: https://github.com/Kiran-Karandikar/.env-file-for-github-actions/actions/workflows/ci.yml
+
 ---------
 
+[![CI][ci-shield]][ci-url]
 
 <!-- PROJECT LOGO -->
 <br />
