@@ -18,9 +18,9 @@ from utility import encrypt
 class GitHubActions:
     """Provides methods to interact with GitHub API."""
 
-    def __init__(self):
-        self.public_key_id = None
-        self.public_key = None
+    def __init__(self, *args, **kwargs):
+        self.public_key_id = kwargs.get("public_key_id", None)
+        self.public_key = kwargs.get("public_key", None)
 
     def get_repo_secrets(self, *args, **kwargs):
         """Get repo secrets. Uses `list-repository-secrets` endpoint.

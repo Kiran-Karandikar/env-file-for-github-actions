@@ -39,9 +39,19 @@
 
 [doc-url]: https://env-file-for-github-actions.readthedocs.io/en/latest/?badge=latest
 
+[code-style-shield]: https://img.shields.io/badge/code%20style-black-000000.svg
+
+[code-style-url]: https://github.com/ambv/black
+
+[code-cov-shield]: https://codecov.io/gh/env-file-for-github-actions/branch/main/graph/badge.svg
+
+[code-cov-url]: https://codecov.io/gh/env-file-for-github-actions
+
 ---------
 
 [![CI][ci-shield]][ci-url]
+[![codecov][code-cov-shield]][code-cov-url]
+[![Code Style Black][code-style-shield]][code-style-url]
 [![Documentation Status][doc-shield]][doc-url]
 
 <!-- PROJECT LOGO -->
@@ -54,8 +64,6 @@
     <a href="https://env-file-for-github-actions.readthedocs.io/en/latest/?"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/kiran-karandikar/env-file-for-github-actions">View Demo</a>
-    ·
     <a href="https://github.com/kiran-karandikar/env-file-for-github-actions/issues">Report Bug</a>
     ·
     <a href="https://github.com/kiran-karandikar/env-file-for-github-actions/issues">Request Feature</a>
@@ -148,7 +156,7 @@ Using GitHub Api and pre-commit hook, the github action secrets will be updated 
   ```
 
 _For more examples, please refer to
-the [Documentation](https://env-file-for-github-actions.readthedocs.io/en/latest/?)_ built using `Sphinx`
+the [Documentation](https://env-file-for-github-actions.readthedocs.io/en/latest/?)_ built using `Sphinx` and `readthedocs.io`
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 

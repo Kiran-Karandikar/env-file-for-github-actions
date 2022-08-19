@@ -47,5 +47,11 @@ jobs:
       - name: Run Tests
         run: docker compose -f local.yml run --user root sample_container pytest
 
+      - name: Run tests and collect coverage
+        run: docker compose -f local.yml run --user root sample_container pytest --cov=./ --cov-report=xml
+
+      - name: Upload coverage reports to Codecov with GitHub Action
+        uses: codecov/codecov-action@v3
+
       - name: Tear down the Stack
         run: docker compose -f local.yml down
