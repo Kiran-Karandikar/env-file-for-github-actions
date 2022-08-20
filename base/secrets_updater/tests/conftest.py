@@ -38,3 +38,21 @@ def get_githubactions(get_public_key_details):
         return GitHubActions()
 
     return _get_githubactions
+
+
+@pytest.fixture(scope="function")
+def secrete_file_content():
+    data = "SECRET_1=Some random value 1\nSECRET_2=Some random value 2"
+    return {
+        "data": data,
+        "items": (
+            ("SECRET_1", "Some random value 1"),
+            ("SECRET_2", "Some random value 2"),
+        ),
+    }
+
+
+@pytest.fixture
+def get_secretes_file(mocker, secrete_file_content):
+    mocked_data = mocker.mock_open(read_data=secrete_file_content.get("data"))
+    mocker.patch("builtins.open", mocked_data)

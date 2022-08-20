@@ -47,12 +47,17 @@
 
 [code-cov-url]: https://codecov.io/gh/env-file-for-github-actions
 
+[pre-commit-ci-shield]: https://results.pre-commit.ci/badge/github/Kiran-Karandikar/env-file-for-github-actions/master.svg
+
+[pre-commit-ci-url]: https://results.pre-commit.ci/latest/github/Kiran-Karandikar/env-file-for-github-actions/master
+
 ---------
 
 [![CI][ci-shield]][ci-url]
 [![codecov][code-cov-shield]][code-cov-url]
 [![Code Style Black][code-style-shield]][code-style-url]
 [![Documentation Status][doc-shield]][doc-url]
+[![pre-commit.ci status][pre-commit-ci-shield]][pre-commit-ci-url]
 
 <!-- PROJECT LOGO -->
 <br />

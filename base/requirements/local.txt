@@ -21,6 +21,8 @@ pytest-sugar==0.9.5
 pytest-asyncio
 # https://github.com/pytest-dev/pytest-cov
 pytest-cov
+# https://github.com/pytest-dev/pytest-mock
+pytest-mock
 # ------------------------------------------------------------------------------
 # Documentation
 # ------------------------------------------------------------------------------

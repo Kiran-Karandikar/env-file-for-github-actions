@@ -18,3 +18,4 @@ sphinx:
 python:
   install:
     - requirements: base/docs/requirements.txt
+    - requirements: base/requirements/local.txt
