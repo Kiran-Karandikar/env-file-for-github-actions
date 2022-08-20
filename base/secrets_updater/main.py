@@ -6,13 +6,11 @@ See Also:
 # Standard Library
 import asyncio
 import os
+import sys
 
 # Project Libraries
 from github import GitHubActions
 from settings import ENV_FILE_PATH, EXCLUDE_ENV_FILES_FROM_UPLOAD
-
-
-asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
 
 
 async def add_local_env_to_secrets(env_file_path):
@@ -63,4 +61,9 @@ def add_secretes():
 
 
 if __name__ == "__main__":
+    if "win" in sys.platform:
+        # Standard Library
+        from asyncio import WindowsSelectorEventLoopPolicy, set_event_loop_policy
+
+        set_event_loop_policy(WindowsSelectorEventLoopPolicy())
     add_secretes()

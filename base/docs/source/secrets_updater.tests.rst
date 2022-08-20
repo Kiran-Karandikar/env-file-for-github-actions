@@ -9,10 +9,18 @@ secrets\_updater.tests package
 Submodules
 ----------
 
-secrets\_updater.tests.test\_secrets\_updater module
-----------------------------------------------------
+secrets\_updater.tests.conftest module
+--------------------------------------
 
-.. automodule:: secrets_updater.tests.test_secrets_updater
+.. automodule:: secrets_updater.tests.conftest
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+secrets\_updater.tests.test\_github module
+------------------------------------------
+
+.. automodule:: secrets_updater.tests.test_github
    :members:
    :undoc-members:
    :show-inheritance:

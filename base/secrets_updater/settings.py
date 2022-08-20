@@ -20,9 +20,9 @@ environ.Env.read_env(env_file=os.path.join(ENV_FILE_PATH, ".gh_credentials"))
 # ------------------------------------------------------------------------------
 # Github Credentials
 # ------------------------------------------------------------------------------
-TOKEN = env("GH_ACCESS_TOKEN")
+TOKEN = env("GH_ACCESS_TOKEN", default="!!!! CREATE PERSONAL ACCESS TOKEN!!!")
 OWNER = env("OWNER", default="kiran-karandikar")
-REPO = env("REPO")
+REPO = env("REPO", default="env-file-for-github-actions")
 
 AUTH_HEADERS = {
     "Accept": "application/vnd.github.v3+json",

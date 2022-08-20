@@ -1,6 +1,4 @@
 [MASTER]
-load-plugins=pylint_django
-django-settings-module=settings.local
 ignore=migrations
 
 [FORMAT]

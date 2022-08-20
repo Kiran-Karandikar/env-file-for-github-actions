@@ -75,22 +75,22 @@ def test_get_repo_public_key_fail(patched_requests, get_githubactions):
         get_githubactions().get_repo_public_key()
 
 
-# @pytest.mark.asyncio
-# @patch("secrets_updater.utility.encrypt")
-# @patch("secrets_updater.github.GitHubActions.get_repo_public_key")
-# @patch("aiohttp.ClientSession.put")
-# async def test_create_or_update_repo_secret_success(patched_client,
-#                                               patched_get_repo_public_key,
-#                                               patched_encrypt,
-#                                               get_githubactions):
-#     """Test if `create_or_update_repo_secret` returns valid data."""
-#     secret_name = "super secrete name"
-#     secret_value = "super secrete value"
-#
-#     object = get_githubactions()
-#
-#     object.create_or_update_repo_secret(secret_name, secret_value)
-#
-#     # await patched_client.assert_called()
-#     await patched_get_repo_public_key.assert_called()
-#     await patched_encrypt.assert_called()
+@pytest.mark.asyncio
+@patch("secrets_updater.github.encrypt")
+@patch("aiohttp.ClientSession.put")
+async def test_create_or_update_repo_secret(
+    patched_client, patched_encrypt, get_githubactions
+):
+    """Test if `create_or_update_repo_secret` returns valid data."""
+    secret_name = "super secrete name"
+    secret_value = "super secrete value"
+
+    patched_encrypt.return_value = "encrypted secrete value using public key"
+    patched_client.return_value.status.return_value = 204
+
+    object = get_githubactions(with_public_key=True)
+
+    await object.create_or_update_repo_secret(secret_name, secret_value)
+
+    patched_encrypt.assert_called_with(object.public_key, secret_value)
+    patched_client.assert_called()
