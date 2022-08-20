@@ -43,9 +43,9 @@
 
 [code-style-url]: https://github.com/ambv/black
 
-[code-cov-shield]: https://codecov.io/gh/env-file-for-github-actions/branch/main/graph/badge.svg
+[code-cov-shield]: https://codecov.io/gh/Kiran-Karandikar/env-file-for-github-actions/branch/master/graph/badge.svg
 
-[code-cov-url]: https://codecov.io/gh/env-file-for-github-actions
+[code-cov-url]: https://codecov.io/gh/Kiran-Karandikar/env-file-for-github-actions
 
 [pre-commit-ci-shield]: https://results.pre-commit.ci/badge/github/Kiran-Karandikar/env-file-for-github-actions/master.svg
 
