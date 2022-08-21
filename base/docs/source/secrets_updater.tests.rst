@@ -24,3 +24,11 @@ secrets\_updater.tests.test\_github module
    :members:
    :undoc-members:
    :show-inheritance:
+
+secrets\_updater.tests.test\_main module
+----------------------------------------
+
+.. automodule:: secrets_updater.tests.test_main
+   :members:
+   :undoc-members:
+   :show-inheritance:
