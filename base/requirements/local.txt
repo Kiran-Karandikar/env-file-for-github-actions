@@ -34,7 +34,8 @@ sphinx-autobuild==2021.3.14
 furo
 # https://sphinx-extensions.readthedocs.io/en/latest/sphinx-copybutton.html
 sphinx-copybutton
-
+# https://readthedocs-sphinx-search.readthedocs.io/en/latest/index.html
+readthedocs-sphinx-search
 
 # ------------------------------------------------------------------------------
 # Code quality

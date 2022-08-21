@@ -15,7 +15,7 @@ import os
 import sys
 
 
-for _ in ("../../", "../../secrets_updater"):
+for _ in ("../../", "../../secrets_updater", "."):
     sys.path.insert(0, os.path.abspath(_))
 
 
@@ -34,13 +34,14 @@ release = "0.1"
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    "sphinx.ext.duration",
-    "sphinx.ext.autodoc",
     "sphinx.ext.napoleon",
+    "sphinx.ext.autodoc",
     "sphinx.ext.autosummary",
+    "sphinx.ext.duration",
     "sphinx.ext.extlinks",
     "sphinx.ext.todo",
     "sphinx_copybutton",
+    "sphinx_search.extension",
 ]
 
 # https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html#configuration
@@ -88,7 +89,7 @@ html_theme = "furo"
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ["_static"]
+html_static_path = []  # or ["_static"]
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
