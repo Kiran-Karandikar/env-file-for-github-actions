@@ -50,7 +50,7 @@ repos:
   #      - id: search-and-replace
 
   - repo: https://github.com/asottile/pyupgrade
-    rev: v3.1.0
+    rev: v3.2.2
     hooks:
       - id: pyupgrade
         args: [ --py39-plus ]
