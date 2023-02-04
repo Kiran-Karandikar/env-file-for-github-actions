@@ -31,50 +31,30 @@
 
 [linkedin-url]: https://linkedin.com/in/kiran-karandikar
 
-[ci-shield]: https://github.com/Kiran-Karandikar/env-file-for-github-actions/actions/workflows/ci.yml/badge.svg
-
-[ci-url]: https://github.com/Kiran-Karandikar/env-file-for-github-actions/actions/workflows/ci.yml
-
-[doc-shield]: https://readthedocs.org/projects/env-file-for-github-actions/badge/?version=latest
-
-[doc-url]: https://env-file-for-github-actions.readthedocs.io/en/latest/?badge=latest
-
-[code-style-shield]: https://img.shields.io/badge/code%20style-black-000000.svg
-
-[code-style-url]: https://github.com/ambv/black
-
-[code-cov-shield]: https://codecov.io/gh/Kiran-Karandikar/env-file-for-github-actions/branch/master/graph/badge.svg
-
-[code-cov-url]: https://codecov.io/gh/Kiran-Karandikar/env-file-for-github-actions
-
-[pre-commit-ci-shield]: https://results.pre-commit.ci/badge/github/Kiran-Karandikar/env-file-for-github-actions/master.svg
-
-[pre-commit-ci-url]: https://results.pre-commit.ci/latest/github/Kiran-Karandikar/env-file-for-github-actions/master
-
 ---------
 
-[![CI][ci-shield]][ci-url]
-[![codecov][code-cov-shield]][code-cov-url]
-[![Code Style Black][code-style-shield]][code-style-url]
-[![Documentation Status][doc-shield]][doc-url]
-[![pre-commit.ci status][pre-commit-ci-shield]][pre-commit-ci-url]
 
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
 <h3 align="center">env-file-for-github-actions</h3>
   <p align="center">
-    Update Github Action Secrets from local <code>.env</code> file
+    Update GitHub Action Secrets from local `.env` file    
+    <br />    
+    <a href="https://kiran-karandikar.github.io/env-file-for-github-actions"><strong>Preview</strong></a>
     <br />
-    <a href="https://env-file-for-github-actions.readthedocs.io/en/latest/?"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/kiran-karandikar/env-file-for-github-actions"><strong>Explore the docs »</strong></a>
     <br />
     <br />
+    <a href="https://github.com/kiran-karandikar/env-file-for-github-actions">View Demo</a>
+    ·
     <a href="https://github.com/kiran-karandikar/env-file-for-github-actions/issues">Report Bug</a>
     ·
     <a href="https://github.com/kiran-karandikar/env-file-for-github-actions/issues">Request Feature</a>
   </p>
 </div>
 
+<!-- BADGES.MD Finish -->
 <!-- BADGES.MD Finish -->
 
 
@@ -198,3 +178,25 @@ Project
 Link: [https://github.com/kiran-karandikar/env-file-for-github-actions](https://github.com/kiran-karandikar/env-file-for-github-actions)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
+
+### Other projects
+
+Check out the other stuff I've worked upon.
+
+- ___AI/ML/Data Science___
+
+  - **AML-Home-Credit-Default-Risk** : [Predicting how capable each applicant is of repaying a loan \(Kaggle Challenge\).](https://github.com/Kiran-Karandikar/AML-Home-Credit-Default-Risk)
+
+  - **Exercise-performance-analysis** : [Prototype exercise volume prediction using machine learning models.](https://github.com/Kiran-Karandikar/Exercise-performance-analysis)
+
+- ___Web Development___
+
+  - **flask-app-template** : [Simple, reusable, minimalistic, configurable flask app.](https://github.com/Kiran-Karandikar/flask-app-template)
+
+  - **flask-oauth2-wrike-api** : [A sample Flask app to authenticate with Wrike as a third-party OAuth2 provider.](https://github.com/Kiran-Karandikar/flask-oauth2-wrike-api)
+
+> Section `Other projects` is auto-updated using [Github actions](https://github.com/features/actions). 
+<!-- CONTACT -->
+## Contact
+
+- [Kiran Karandikar: khkarandikar at gmail dot com](mailto:khkarandikar@gmail.com)
