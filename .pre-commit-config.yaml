@@ -50,7 +50,7 @@ repos:
   #      - id: search-and-replace
 
   - repo: https://github.com/asottile/pyupgrade
-    rev: v3.3.1
+    rev: v3.3.2
     hooks:
       - id: pyupgrade
         args: [ --py39-plus ]
@@ -78,7 +78,7 @@ repos:
       - id: shellcheck
 
   - repo: https://github.com/IamTheFij/docker-pre-commit
-    rev: v2.1.1
+    rev: v3.0.1
     hooks:
       - id: docker-compose-check
 
