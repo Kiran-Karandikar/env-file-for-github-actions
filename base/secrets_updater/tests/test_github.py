@@ -1,4 +1,5 @@
 """Test cases for `GitHubActions`."""
+
 # Standard Library
 from unittest.mock import patch
 

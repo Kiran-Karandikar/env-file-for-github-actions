@@ -1,4 +1,5 @@
 """Test cases for wrapper `main`."""
+
 # Standard Library
 import os
 

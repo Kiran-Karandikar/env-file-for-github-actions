@@ -1,4 +1,5 @@
 """Helper Functions."""
+
 # Standard Library
 from base64 import b64encode
 
