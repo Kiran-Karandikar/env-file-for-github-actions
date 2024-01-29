@@ -1,4 +1,5 @@
 """Initialize environment variables."""
+
 # Standard Library
 import os
 
