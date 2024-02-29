@@ -156,23 +156,6 @@ Distributed under the `MIT License`. See `LICENSE` for more information.
 
 <!-- MARKDOWN LINKS & IMAGES -->
 
-<!-- CONTACT -->
-
-## Contact
-
-- [Kiran Karandikar](mailto:hkarandikar@gmail.com)
-
-Project
-Link: [https://github.com/kiran-karandikar/env-file-for-github-actions](https://github.com/kiran-karandikar/env-file-for-github-actions)
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-
-
-
-
 ### Other projects
 
 Check out the other stuff I've worked upon.
