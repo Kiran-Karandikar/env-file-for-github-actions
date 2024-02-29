@@ -39,8 +39,8 @@
 <div align="center">
 <h3 align="center">env-file-for-github-actions</h3>
   <p align="center">
-    Update GitHub Action Secrets from local `.env` file
-    <br />
+    Update GitHub Action Secrets from local `.env` file    
+    <br />    
     <a href="https://kiran-karandikar.github.io/env-file-for-github-actions"><strong>Preview</strong></a>
     <br />
     <a href="https://github.com/kiran-karandikar/env-file-for-github-actions"><strong>Explore the docs »</strong></a>
@@ -180,6 +180,7 @@ Link: [https://github.com/kiran-karandikar/env-file-for-github-actions](https://
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
+
 ### Other projects
 
 Check out the other stuff I've worked upon.
@@ -196,8 +197,8 @@ Check out the other stuff I've worked upon.
 
   - **flask-oauth2-wrike-api** : [A sample Flask app to authenticate with Wrike as a third-party OAuth2 provider.](https://github.com/Kiran-Karandikar/flask-oauth2-wrike-api)
 
-> Section `Other projects` is auto-updated using [Github actions](https://github.com/features/actions).
+> Section `Other projects` is auto-updated using [Github actions](https://github.com/features/actions). 
 <!-- CONTACT -->
 ## Contact
 
-- [Kiran Karandikar: khkarandikar at gmail dot com](mailto:khkarandikar@gmail.com)
+- [Kiran Karandikar:](mailto:connect.funnel.github@kirankarandikar.com)
