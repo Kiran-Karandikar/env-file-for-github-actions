@@ -27,8 +27,8 @@
 <div align="center">
 <h3 align="center">env-file-for-github-actions</h3>
   <p align="center">
-    Update GitHub Action Secrets from local `.env` file    
-    <br />    
+    Update GitHub Action Secrets from local `.env` file
+    <br />
     <a href="https://kiran-karandikar.github.io/env-file-for-github-actions"><strong>Preview</strong></a>
     <br />
     <a href="https://github.com/kiran-karandikar/env-file-for-github-actions"><strong>Explore the docs »</strong></a>
@@ -179,4 +179,3 @@ Check out the other stuff I've worked upon.
 ## Contact
 
 - [Kiran Karandikar:](mailto:connect.funnel.github@kirankarandikar.com)
-
