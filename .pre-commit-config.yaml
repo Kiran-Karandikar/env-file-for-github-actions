@@ -26,7 +26,7 @@ repos:
       - id: pretty-format-json
 
   - repo: https://github.com/google/pre-commit-tool-hooks
-    rev: v1.2.4 # Use the rev you want to point at.
+    rev: v1.2.5 # Use the rev you want to point at.
     hooks:
       # To disable this on sections of a markdown file, use the ignore/resume comments
       # <!-- google-doc-style-ignore --> and <!-- google-doc-style-resume -->
