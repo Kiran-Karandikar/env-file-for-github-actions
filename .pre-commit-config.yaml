@@ -1,6 +1,6 @@
 exclude: "^docs/|/migrations/"
 minimum_pre_commit_version: 2.8.0
-default_stages: [ pre-commit, pre-push, manual ]
+default_stages: [ Nonepre-commitNone, Nonepre-pushNone, manual ]
 
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
@@ -93,7 +93,7 @@ repos:
         verbose: True  # false for no command line output
         log_file: ./base/secrets_updater.log
         always_run: true
-        stages: [ pre-push ]
+        stages: [ Nonepre-pushNone ]
 
 # sets up .pre-commit-ci.yaml to ensure pre-commit dependencies stay up to date
 # https://pre-commit.ci/
